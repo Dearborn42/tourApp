@@ -3,13 +3,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Details from './Details'
 
 const Row = ({data, update}) => {
+    const {name, id, info, image, price} = data;
   return (
     <>
-        <tr key={data.id} className="border border-black">
-              <td colSpan={2}>{data.name}</td>
-              <td colSpan={1}><Details key={0} placement={"bottom"} name={"See info"} desc={data.info} title={data.name}/></td>
-              <td colSpan={1}><button onClick={() => update(data.id)}>Not Interested</button></td>
-        </tr>
+        <article key={id} className="list">
+                <img src={image} alt={"Image of, " + name} />
+                <h4>{name}</h4>
+                <Details key={0} placement={"bottom"} name={"See info"} desc={info} title={name} cost={price}/>
+                <button onClick={() => update(data.id)}>Not Interested</button>
+        </article>
     </>
   )
 }

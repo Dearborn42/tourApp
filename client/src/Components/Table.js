@@ -9,21 +9,20 @@ const Tables = ({places}) => {
     }
   return (
     <div>
-      <Table striped>
+      {/* <Table striped>
       <thead>
         <tr>
           <th colSpan={4}>Tours</th>
         </tr>
       </thead>
-      <tbody>
-        {loactions.map((place) => (
-            <Row data={place} update={updateLocations} />
-          ))}
-      </tbody>
-    </Table>
+      <tbody> */}
+        {loactions.map((place) => 
+            (<Row data={place} update={updateLocations} />)
+        )}
+      {/* </tbody>
+    </Table> */}
     </div>
   );
 };
 
 export default Tables;
-
