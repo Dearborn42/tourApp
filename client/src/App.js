@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Styles/App.css';
+import './Styles/main.css';
 import Tables from './Components/Table';
 import Spinner from 'react-bootstrap/Spinner';
 
@@ -33,7 +34,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header container list">
+      <header className="App-header container menu">
         {data ? (<Tables places={data}/>) : (
           <Spinner animation="border" role="status">
             <span className="visually-hidden">Loading...</span>

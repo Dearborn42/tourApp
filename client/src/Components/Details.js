@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
 export default function Details({ name, title, desc, cost, ...props }) {
@@ -10,17 +9,18 @@ export default function Details({ name, title, desc, cost, ...props }) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow} className="me-2">
+      <button onClick={handleShow}>
         {name}
-      </Button>
-      <Offcanvas show={show} onHide={handleClose} {...props}>
+      </button>
+      <Offcanvas show={show} onHide={handleClose} {...props} className='menu'>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>{title}</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Header closeButton>
+        <Offcanvas.Body>
           <Offcanvas.Title>${cost}</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>{desc}</Offcanvas.Body>
+          <br />
+          {desc}
+        </Offcanvas.Body>
       </Offcanvas>
     </>
   );
