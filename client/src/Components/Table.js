@@ -7,8 +7,12 @@ const Tables = ({places}) => {
         setLocations(loactions.filter(x => x.id !== id));
     }
   return (
-    <div>
-        {loactions.map((place) => (<Row key={place.id} data={place} update={updateLocations} />))}
+    <div className='list d-flex flex-column'>
+        {loactions.map((place) => (
+          <>
+            <Row key={place.id} data={place} update={updateLocations} /> <br/>
+          </>
+        ))}
     </div>
   );
 };

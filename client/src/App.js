@@ -33,7 +33,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <main className="App body">
       <header className="App-header container menu">
         {data ? (<Tables places={data}/>) : (
           <Spinner animation="border" role="status">
@@ -42,7 +42,7 @@ function App() {
         )}
         <button onClick={handleRefresh} >Refresh</button>
       </header>
-    </div>
+    </main>
   );
 }
 
